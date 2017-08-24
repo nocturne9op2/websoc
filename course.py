@@ -7,7 +7,7 @@ class Course:
         info_dict = {}
         tags = ['CCode', 'Typ', 'Sec', 'Unt', 'Instructor',
                 'Day', 'Time', 'Place', 'Final', 'Max',
-                'Enr', 'WL', 'Req', 'Nor', 'Rstr', 'Status', ]
+                'Enr', 'WL', 'Req', 'Nor', 'Rstr', 'Status']
 
         for tag, info in zip(tags, info_list):
             if tag in ['Instructor', 'Day', 'Time', 'Place']:
@@ -21,7 +21,7 @@ class Course:
         if len(info_list) in [1, 4]:
             self.schedules[-1]['Instructor'].append(info_list[0])
         else:
-            tags = ['Day', 'Time', 'Place', ]
+            tags = ['Day', 'Time', 'Place']
 
             for tag, info in zip(tags, info_list):
                 self.schedules[-1][tag].append(info)
