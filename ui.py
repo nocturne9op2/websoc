@@ -15,7 +15,7 @@ class UI:
 
     def main_loop(self):
         while True:
-            args = input(">>>").lower().split()
+            args = input(">>> ").lower().split()
             if len(args) == 0:
                 print("Invalid argument(s), type websoc for usage.")
                 continue
