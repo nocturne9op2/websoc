@@ -50,7 +50,6 @@ class ReProcess:
                 self.rough_courses[header] = []
                 write_schedules = True
 
-    # Creates a Course object which contains all the schedules of this course
     def re_match(self):
         patterns = {
             'full_schedule': re.compile(
@@ -60,7 +59,7 @@ class ReProcess:
                 r'([\d\-.]*) *'
                 r'(STAFF|[^\d]*\.) *'
                 r'(\w*) *'
-                r'(\*TBA\*|\d*:\d*- *\d*:\d*\w*) *'
+                r'(\*TBA\*|[\d:]*- *[\d:]*\w*) *'
                 r'(\*TBA\*|\w* \w*) {1,10}'
                 r'(TBA|[\w,]* \w* [\d,]* [\d\-:]*\w*) *'
                 r'(\d*) *'
@@ -83,6 +82,7 @@ class ReProcess:
                 r'(STAFF|[^\d]*\.)')
         }
 
+        # Creates a Course object which contains all its schedules
         for header, schedules in self.rough_courses.items():
             course = Course(header)
 

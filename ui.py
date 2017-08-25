@@ -5,11 +5,6 @@ from layout import layout_enr
 from layout import layout_instructors
 from lookup import lookup
 
-'''
-TODO: find a way to remove spaces so strip() is not needed for final
-TODO: find a way to reduce extra patterns to one
-'''
-
 
 class UI:
     def __init__(self):
