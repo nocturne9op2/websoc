@@ -42,7 +42,6 @@ class ReProcess:
             if write_schedules:  # Attaches schedules to course header key
                 if line == '':
                     write_schedules = False
-                    continue
                 else:
                     schedule = line
                     self.rough_courses[header].append(schedule)
