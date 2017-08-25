@@ -2,15 +2,21 @@
 ```
 $ git clone https://github.com/nocturne9op2/websoc.git
 ```
-## Installation
-In project directory:
+## Initialize
+To initialize python virtual environment, in project directory:
 ```
 $ python3 -m venv myvenv
 $ source myvenv/bin/activate
+```
+## Install
+```
 $ pip install requests
+```
+## Run
+```
 $ python ui.py
 ```
-## Example
+## Usage
 ```
 >>> websoc
 Usage: websoc [department] [course number]
@@ -46,4 +52,13 @@ I&C Sci  46        DATA STRC IMPL&ANLS
      #36690 LEC  --  PATTIS, R. [210/300]+2
                        HIB 100, MWF 11:00-11:50
                          Final: Fri, Dec 15, 8:00-10:00am
+```
+## Quit
+To quit program:
+```
+>>> quit
+```
+To quit python virtual envuronment:
+```
+$ deactivate
 ```
