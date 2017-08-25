@@ -31,11 +31,11 @@ class UI:
                     args[1] = lookup(args[1])
                     if len(args) == 2:
                         self.send_request(args[1], '')
-                    else:
+                    elif len(args) == 3:
                         self.send_request(args[1], args[2])
 
                     self.resolve_text(args[1])
-                    self.display_courses(len(args))
+                    self.display_courses(args)
 
             elif args[0] == 'quit':
                 break
@@ -52,16 +52,16 @@ class UI:
         re_process = ReProcess(text, department)
         self.courses = re_process.courses
 
-    def display_courses(self, args_length):
+    def display_courses(self, args):
         if len(self.courses) == 0:
             print("No course(s) found.")
         else:
-            if args_length == 2:
+            if len(args) == 2:
                 print('')
                 for course in self.courses:
                     print(course.header)
                 print('')
-            else:
+            elif len(args) == 3:
                 print('')
                 for course in self.courses:
                     print(course.header)

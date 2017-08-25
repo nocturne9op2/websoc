@@ -20,8 +20,9 @@ class Course:
     def add_extra(self, info_list):
         if len(info_list) in [1, 4]:
             self.schedules[-1]['Instructor'].append(info_list[0])
-        else:
+
+        if len(info_list) in [3, 4]:
             tags = ['Day', 'Time', 'Place']
 
-            for tag, info in zip(tags, info_list):
+            for tag, info in zip(tags, info_list[len(info_list) - 3:]):
                 self.schedules[-1][tag].append(info)
