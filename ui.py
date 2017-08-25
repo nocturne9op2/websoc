@@ -21,6 +21,9 @@ class UI:
     def main_loop(self):
         while True:
             args = input(">>>").lower().split()
+            if len(args) == 0:
+                print("Invalid argument(s), type websoc for usage.")
+                continue
 
             if args[0] == 'websoc':
                 if len(args) > 3:
@@ -39,6 +42,8 @@ class UI:
 
             elif args[0] == 'quit':
                 break
+            else:
+                print("Invalid argument(s), type websoc for usage.")
 
     def send_request(self, department, course_number):
         web_lib = WebLib(lookup(department), course_number)
