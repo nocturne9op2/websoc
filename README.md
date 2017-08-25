@@ -10,8 +10,10 @@ $ source myvenv/bin/activate
 $ pip install requests
 $ python ui.py
 ```
-## Example usage
+## Example
 ```
+>>> websoc
+Usage: websoc [department] [course number]
 >>> websoc ics
 
 I&C Sci  3         INTERNET TECH & SOC
