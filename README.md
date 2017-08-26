@@ -3,7 +3,7 @@
 $ git clone https://github.com/nocturne9op2/websoc.git
 ```
 ## Initialize
-Initialize python virtual environment:
+Initialize Python virtual environment:
 ```
 $ cd websoc
 $ python3 -m venv myvenv
@@ -62,7 +62,7 @@ Quit program:
 ```
 >>> quit
 ```
-Quit python virtual envuronment:
+Quit Python virtual environment:
 ```
 $ deactivate
 ```
