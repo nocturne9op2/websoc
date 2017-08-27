@@ -16,7 +16,6 @@ class ReProcess:
         inner_text = []
         count = 0
 
-        # Clears unnecessary lines
         for line in text:
             line = line.strip()
             if '_________________________________________________________________' in line:
@@ -32,20 +31,19 @@ class ReProcess:
         header = ''
         write_schedules = False
 
-        # Connects course header with schedules
         while True:
             try:
                 line = next(inner_text_iter)
             except StopIteration:
                 break
 
-            if write_schedules:  # Attaches schedules to course header key
+            if write_schedules:
                 if line == '':
                     write_schedules = False
                 else:
                     schedule = line
                     self.rough_courses[header].append(schedule)
-            elif department in line.lower():  # Sets course header key
+            elif department in line.lower():
                 header = line
                 self.rough_courses[header] = []
                 write_schedules = True
@@ -72,17 +70,16 @@ class ReProcess:
             'instructor_day_time_place': re.compile(
                 r'(STAFF|[^\d]*\.) *'
                 r'(\w*) *'
-                r'(\*TBA\*|\d*:\d*- *\d*:\d*\w*) *'
+                r'(\*TBA\*|[\d:]*- *[\d:]*\w*) *'
                 r'(\*TBA\*|\w* \w*)'),
             'day_time_place': re.compile(
                 r'(\w*) *'
-                r'(\*TBA\*|\d*:\d*- *\d*:\d*\w*) *'
+                r'(\*TBA\*|[\d:]*- *[\d:]*\w*) *'
                 r'(\*TBA\*|\w* \w*)'),
             'instructor': re.compile(
                 r'(STAFF|[^\d]*\.)')
         }
 
-        # Creates a Course object which contains all its schedules
         for header, schedules in self.rough_courses.items():
             course = Course(header)
 

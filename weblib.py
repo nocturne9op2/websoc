@@ -25,6 +25,6 @@ class WebLib:
             'CancelledCourses': 'Exclude',
             'Bldg': '',
             'Room': '',
-            'Submit': 'Display Text Results',
+            'Submit': 'Display Text Results'
         }
         self.response = requests.post(url, form).text

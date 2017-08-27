@@ -43,7 +43,7 @@ departments = {'aceng': 'ac eng',
                'uniaff': 'uni aff',
                'unistu': 'uni stu',
                'visstd': 'vis std',
-               'womnst': 'womn st',
+               'womnst': 'womn st'
                }
 
 
